@@ -10,7 +10,7 @@ function App() {
   const { authUser } = useContext(AuthContext);
 
   return (
-    <div className="bg-[url('./src/assets/bgImage.jpg')] bg-no-repeat bg-cover bg-center">
+    <div className="bg-[url('/bgImage.svg')] bg-no-repeat bg-cover bg-center">
       <Toaster position="top-left" reverseOrder={false} />
 
       <Routes>
