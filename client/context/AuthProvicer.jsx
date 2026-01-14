@@ -12,7 +12,7 @@ export const AuthProvider = ({ children }) => {
   const [onlineUser, setOnlineUser] = useState([]);
   const [socket, setSocket] = useState(null);
 
-  // ✅ check auth
+  //  check auth
   const checkAuth = async () => {
     try {
       const { data } = await api.get("/api/auth/check");
@@ -25,7 +25,7 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  // ✅ login
+  //  login
   const Login = async (state, credential) => {
     try {
       const { data } = await api.post(`/api/auth/${state}`, credential);
@@ -43,7 +43,7 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  // ✅ logout
+  //  logout
   const Logout = () => {
     localStorage.removeItem("token");
     setToken("");
@@ -58,7 +58,7 @@ export const AuthProvider = ({ children }) => {
     toast.success("Logout successful");
   };
 
-  // ✅ update profile
+  //  update profile
   const updateProfile = async (body) => {
     try {
       const { data } = await api.put("/api/auth/update-profile", body);
@@ -75,7 +75,7 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  // ✅ socket connect
+  //  socket connect
   const connectSocket = (userData) => {
     if (!userData || socket?.connected) return;
 
